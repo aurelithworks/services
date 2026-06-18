@@ -38,6 +38,7 @@ header{
 .nav h1{
     font-size:18px;
     font-family:'Noto Serif JP',serif;
+    letter-spacing:1px;
 }
 
 .nav-btn{
@@ -75,6 +76,7 @@ header{
 .sub-title{
     color:#c9a86a;
     margin-bottom:20px;
+    letter-spacing:2px;
 }
 
 .hero h2{
