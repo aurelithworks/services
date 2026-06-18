@@ -13,8 +13,17 @@
 
 <style>
 
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
   font-family:'Inter',sans-serif;
   background:#0d0d0d;
   color:#fff;
@@ -22,54 +31,137 @@ body{
 }
 
 .container{
-  width:90%;
+  width:92%;
   max-width:900px;
   margin:auto;
 }
 
 header{
-  padding:40px 0;
-  border-bottom:1px solid rgba(255,255,255,.1);
+  padding:70px 0 35px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
 }
 
 h1{
   font-family:'Noto Serif JP',serif;
-  font-size:28px;
+  font-size:clamp(24px,4vw,34px);
+  margin-bottom:10px;
+  letter-spacing:1px;
+}
+
+header p{
+  color:#aaa;
+  font-size:14px;
 }
 
 h2{
-  font-size:22px;
-  margin-top:50px;
+  margin-top:65px;
+  font-size:20px;
   color:#c9a86a;
+  font-family:'Noto Serif JP',serif;
 }
 
 p{
   color:#ddd;
-  margin:15px 0;
+  margin:14px 0;
+  font-size:15px;
 }
 
 .step{
   background:#151515;
-  padding:25px;
-  margin:20px 0;
-  border:1px solid rgba(255,255,255,.05);
+  padding:22px;
+  margin:18px 0;
+  border:1px solid rgba(255,255,255,.06);
+  transition:.3s;
+}
+
+.step:hover{
+  transform:translateY(-4px);
+  border-color:rgba(201,168,106,.35);
 }
 
 .step h3{
-  margin:0 0 10px 0;
+  margin-bottom:8px;
   color:#c9a86a;
+}
+
+.note{
+  margin-top:40px;
+  padding:18px 20px;
+  background:#111;
+  border-left:3px solid #c9a86a;
+}
+
+.highlight{
+  margin:30px 0;
+  padding:20px;
+  background:#111;
+  border:1px solid rgba(201,168,106,.2);
 }
 
 a{
   color:#c9a86a;
   text-decoration:none;
+  transition:.3s;
+  display:inline-block;
 }
 
-.note{
-  margin-top:40px;
-  padding:20px;
-  border-left:3px solid #c9a86a;
-  background:#111;
+a:hover{
+  opacity:.7;
+  transform:translateX(4px);
+}
+
+.back{
+  margin-top:90px;
+  padding-top:60px;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+}
+
+.back a{
+  font-size:14px;
+  padding:12px 18px;
+  border:1px solid rgba(201,168,106,.3);
+  transition:.3s;
+}
+
+.back a:hover{
+  background:#c9a86a;
+  color:#111;
+  transform:translateY(-2px);
+}
+
+.footer{
+  margin-top:80px;
+  padding:40px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  color:#888;
+  font-size:13px;
+}
+
+body::after{
+  content:"";
+  display:block;
+  height:80px;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(18px);
+  animation:fadeUp .8s ease forwards;
+}
+
+.fade:nth-child(2){animation-delay:.05s;}
+.fade:nth-child(3){animation-delay:.1s;}
+.fade:nth-child(4){animation-delay:.15s;}
+.fade:nth-child(5){animation-delay:.2s;}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 </style>
@@ -77,69 +169,79 @@ a{
 
 <body>
 
-<header>
+<header class="fade">
   <div class="container">
     <h1>ドメイン取得ガイド</h1>
-    <p>ホームページ公開に必要な「ドメイン」の取得方法を説明します。</p>
+    <p>ホームページ公開に必要な「ドメイン」の取得手順を解説します</p>
   </div>
 </header>
 
 <div class="container">
 
-<h2>■ ドメインとは</h2>
-<p>
-ドメインとは「インターネット上の住所」のようなものです。<br>
+<h2 class="fade">ドメインとは</h2>
+
+<p class="fade">
+ドメインとは、インターネット上の「住所」のようなものです。<br>
 例：example.com / example.jp
 </p>
 
-<p>
-ホームページを公開する際には、このドメインを取得する必要があります。
+<p class="fade">
+ホームページ公開にはドメインが必要です。
 </p>
 
-<h2>■ 取得の流れ</h2>
-
-<div class="step">
-<h3>① ドメインサービスにアクセス</h3>
-<p>例：お名前.com / Google Domains など</p>
+<div class="highlight fade">
+取得したドメインは継続利用でき、信頼性にも直結します。
 </div>
 
-<div class="step">
+<h2 class="fade">取得の流れ</h2>
+
+<div class="step fade">
+<h3>① ドメインサービスへアクセス</h3>
+<p>お名前.comなどのドメインサービスを利用します。</p>
+</div>
+
+<div class="step fade">
 <h3>② 希望の名前を検索</h3>
-<p>店舗名やサービス名を入力して空き状況を確認します</p>
+<p>店舗名・サービス名で空き状況を確認します。</p>
 </div>
 
-<div class="step">
+<div class="step fade">
 <h3>③ 取得手続き</h3>
-<p>空いていればそのまま契約に進みます（年額制）</p>
+<p>空いていれば年額契約で取得できます。</p>
 </div>
 
-<div class="step">
+<div class="step fade">
 <h3>④ サーバーと接続</h3>
-<p>取得後、ホームページとドメインを紐付けて公開します</p>
+<p>ホームページと紐付けて公開します。</p>
 </div>
 
-<h2>■ 費用について</h2>
-<p>
-ドメインは年間契約となり、一般的には<br>
-<strong>年間1,000円〜3,000円程度</strong>で利用できます。
+<h2 class="fade">費用について</h2>
+
+<p class="fade">
+年間1,000円〜3,000円程度で利用できます。
 </p>
 
-<div class="note">
-サーバー設定や接続作業はこちらで対応可能ですので、
-専門知識がなくても問題ありません。
+<div class="note fade">
+設定・接続作業はすべて対応可能です。
 </div>
 
-<h2>■ 補足</h2>
-<p>
-ドメインは早い者勝ちのため、希望の名前が取れない場合もあります。<br>
-その際は代替案をご提案いたします。
+<h2 class="fade">補足</h2>
+
+<p class="fade">
+ドメインは早い者勝ちのため、取得できない場合があります。
 </p>
 
-<p style="margin-top:40px;">
-→ <a href="index.html">トップページへ戻る</a>
-</p>
+<div class="back fade">
+<a href="index.html">トップページへ戻る</a>
+</div>
 
 </div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Aurelith Works</p>
+  </div>
+</footer>
 
 </body>
 </html>
